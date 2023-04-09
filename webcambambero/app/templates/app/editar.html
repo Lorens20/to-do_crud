@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static '/estilos/estilo.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <title>Cambamber@s</title>
+</head>
+<body>
+    <div class="contenedor-modal">
+        <div class="modal">
+            <h3>Editar Plan</h3>
+            <form method="post" action={%  url "update" %}>
+                {% csrf_token %}
+                <label for="">Plan
+                <input type="text" value={{ update.nombre }} placeholder="Nombre del plan" autofocus required name="plan"></label>
+                <label for="">Date 
+                <input type="date"  name="date">{{ update.fecha }}</label>
+                <label for="">Lugar
+                <input type="text" placeholder="Ubicacion" value={{ update.lugar }} required name="place"></label>
+                <label for="">Cambambero
+                <input type="text" placeholder="Creador"  required name="name" value={{ update.creador }}></label>
+                <input type="hidden" name="id" value="{{ update.id }}"/>
+                <div class="button">
+                        <button type="button" class="btn btn-secondary" id="close-modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static './appi.js' %}"></script>
+</body>
+</html>

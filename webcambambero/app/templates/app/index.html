@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static '/estilos/estilo.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <title>Cambamber@s</title>
+</head>
+<body>
+    <header class="header">
+        <section>
+            <img src="https://i.pinimg.com/originals/65/d1/cf/65d1cf977a94941dca20275eb793645f.jpg" alt="logo"  />
+        </section>
+        <div class="conte">
+            <p>Si a Todo</p>
+        </div>
+        
+    </header>
+
+    <fieldset>
+        <legend>Planes</legend>
+        <table>
+            <tr class="posicion">
+                <th>Plan</th>
+                <th>Fecha</th>
+                <th>Lugar</th>
+                <!-- <th>Realizado?</th> -->
+                <th>Cambamber@</th>
+                <th></th>
+            </tr>
+            
+            <div class="Button">
+                <button class="btn" type="submit" id="lanzar-modal">New Cambambeo</button>
+                <!-- <a href="#">New Cambambeo</a> -->
+            </div>
+            <tbody>
+                {% for data in db_data %}
+                <tr class="posicionone">
+                    <td>{{ data.nombre}}</td>
+                    <td>{{ data.fecha}}</td>
+                    <td>{{ data.lugar}}</td>
+                    <!-- <td> <label class="divi"><input class="inline" type="radio" name="rta" value="si">SI</label> </td>
+                    <td> <label class="divi"><input class="inline" type="radio" name="rta" value="no">NO</label> </td> -->
+                    <td> {{ data.creador}}</td>
+                    <td>
+                    <div class="actions">
+                        <a href = {% url "updatef" data.id %} class="edit-modal">Edit</a>
+                        <a href = {% url "delete" data.id %} class="delete-btn">Delete</a>
+                    </div></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </fieldset>
+    
+        <div class="contenedor-modal">
+            <div class="modal">
+                <h3>Plan</h3>
+                <form method="post" action={%  url "insert" %}>
+                    {% csrf_token %}
+                    <label for="">Plan
+                    <input type="text" placeholder="Nombre del plan" autofocus required name="plan"></label>
+                    <label for="">Date 
+                    <input type="date" name="date"></label>
+                    <label for="">Lugar
+                    <input type="text" placeholder="Ubicacion" required name="place"></label>
+                    
+                    <label for="">Cambambero
+                    <input type="text" placeholder="Creador" required name="name"></label>
+                    <div class="button">
+                            <button type="button" class="btn btn-secondary" id="close-modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save </button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <script src="{% static './appi.js' %}"></script>
+</body>
+</html>

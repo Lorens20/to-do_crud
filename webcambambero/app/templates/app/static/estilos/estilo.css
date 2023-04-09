@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(https://thumbs.dreamstime.com/b/carretera-con-un-paisaje-del-desierto-las-monta%C3%B1as-en-fondo-129783613.jpg);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-x:hidden;
+    
+}
+
+
+.header{
+     /* background-image: url('../assets/image/viaja.jpg'); */
+    background-color: black;
+    background-size: cover;
+    height: 150px;
+    top: 0;
+    
+}
+.header img{
+    width: 90px;
+    height: 95px;
+    border-radius: 25px;
+    border:solid blueviolet 4px;
+    
+}
+section{
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0;
+}
+.conte{
+    text-align: center;
+}
+.conte p{
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Rampart One', cursive;
+    position: relative;
+    bottom: 140px;
+    color: aliceblue;
+    text-shadow: 2px 5px 3px blue ;
+    
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.table th{
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+.posicion{
+    text-align:center;
+}
+.posicionone{
+    text-align: center;
+    border-top: 5px;
+}
+.actions {
+    display: flex;
+    left: 23%;
+    top: 40%;
+    position: relative;
+}
+.edit-modal{
+    display: inline-block; /* Muestra los botones en línea */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px; /* Ajusta los márgenes para pegar los botones */
+    cursor: pointer;
+    border-radius: 4px;
+  }
+.delete-btn {
+  display: inline-block; /* Muestra los botones en línea */
+  background-color: #e91a13;
+  border: none;
+  color: rgb(255, 247, 247);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px; /* Ajusta los márgenes para pegar los botones */
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-btn:hover{
+    background-color: #3e8e41;
+}
+.delete-btn:hover {
+  background-color: #d12222;
+}
+
+.Button button{
+    color: white;
+    text-decoration: none;
+    background: rgb(119, 34, 136);
+    padding: 4px 20px;
+    border-radius: 35px;
+    font-size: 15px;
+    margin: 10px;
+    position: relative;
+    left: 75%;
+}
+.button button{
+    color:white;
+    text-decoration: none;
+    background: rgb(119, 34, 136);
+    padding: 4px 20px;
+    border-radius: 35px;
+    font-size: 15px;
+    margin: 10px;
+    position: relative;
+    left: 55%;
+}
+form{
+    width: 60vw;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+h3{
+    margin: 1em auto;
+    text-align: center;
+}
+label{
+    display: block;
+    margin: 0.5rem 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+input{
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    background-color: rgb(245, 239, 239);
+    border: 1px solid rgb(245, 239, 239);
+    color: rgb(36, 22, 22);
+    font-family: cursive;
+}
+.contenedor-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-modal.mostrar{
+    background-color: black;
+    z-index: 1 ;
+    opacity: 0.9;
+}
+.contenedor-modal .modal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 500px;
+    padding: 50px;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(167,45,253,1) 100%);
+    opacity: 0.9;
+}
+.inline{
+    width: unset;
+    margin: 10px 0 0 0;
+}
+.divi{
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    position: absolute;
+    left: 130px;
+}
